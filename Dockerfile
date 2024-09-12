@@ -1,5 +1,5 @@
 # 拉取镜像
-FROM node:20 AS build-stage
+FROM node:20.16.0 AS build-stage
 # 配置维护者的名字
 LABEL maintainer='llcmite@qq.com'
 # 创建工作目录
