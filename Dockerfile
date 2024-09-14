@@ -7,7 +7,8 @@ WORKDIR /app
 
 # 复制所有文件到当前目录下
 COPY . .
-RUN npm install cnpm -g --no-progress --registry=https://registry.npm.taobao.org
+RUN npm set strict-ssl=false
+RUN npm install cnpm -g --registry=https://registry.npm.taobao.org
 RUN cnpm install
 RUN npm run build
 
