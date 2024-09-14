@@ -1,5 +1,5 @@
 # 拉取镜像
-FROM node:20.16.0 AS build-stage
+FROM node:20-alpine AS build-stage
 # 配置维护者的名字
 LABEL maintainer='llcmite@qq.com'
 # 创建工作目录
@@ -7,7 +7,7 @@ WORKDIR /app
 
 # 复制所有文件到当前目录下
 COPY . .
-RUN npm install -g cnpm --registry=http://registry.npmmirror.com
+RUN npm install cnpm -g --no-progress --registry=https://registry.npm.taobao.org
 RUN cnpm install
 RUN npm run build
 
